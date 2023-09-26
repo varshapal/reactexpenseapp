@@ -15,6 +15,10 @@ function ExpenseItem(props) {
         setAmount('100');
         console.log(amount);
     }
+    const deleteExpense = () => {
+        const expenseElement = document.querySelector('.expense-item');
+        expenseElement.remove();
+    }
     return (
         <Card className='expense-item'>
             <ExpenseDate date={props.date}></ExpenseDate>
@@ -22,7 +26,7 @@ function ExpenseItem(props) {
                 <h2>{title}</h2>
                 <div className='expense-item__price'>${amount}</div>
             </div>
-            <button onClick={clickHandler}>Change Title</button>
+            <button onClick={deleteExpense}>Delete Expense</button>
         </Card>
     );
 }
